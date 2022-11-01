@@ -7,7 +7,7 @@ const forecast = require('./utils/forecast')
 
 
 const app = express()
-
+const port = process.env.PORT || 3000
 
 //lets say someone wants to visit any of the below, but how do we set up our server to send a response when someone tries to get something at a specific route(look above)
 //app.com
@@ -109,6 +109,6 @@ app.get('*', (req, res) => {
         errorMessage: 'Page not found'
     })
 })
-app.listen(3000, () => {
-    console.log('Server is up on port 3000');
+app.listen(port, () => {
+    console.log('Server is up on port 3000' + port);
 })
